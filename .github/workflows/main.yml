@@ -11,16 +11,14 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    container:
-      image: node
   
     steps:
       - name: Checkout repo
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Install & Tests
-      run: |
-        npm install
-        npm test
+        run: |
+          npm install
+          npm test
 
   cd:
     runs-on: ubuntu-latest
