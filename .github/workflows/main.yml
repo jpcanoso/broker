@@ -15,9 +15,7 @@ jobs:
       image: node
   
   steps:
-    - uses: actions/checkout@v2
-      with:
-        repository: 'jpcanoso/broker'
+    - uses: actions/checkout@v1
 
     - name: Install & Tests
       run: |
@@ -29,7 +27,7 @@ jobs:
     needs: ci
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
