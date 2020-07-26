@@ -11,7 +11,7 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-  
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -31,9 +31,9 @@ jobs:
       run: docker build -t back .
     - name: Tags
       run: |
-        docker tag back ${{ secrets.DOCKER_USER }}/back:${{ github.sha }}
-        docker tag back ${{ secrets.DOCKER_USER }}/back:latest
+        docker tag back mripta/broker:${{ github.sha }}
+        docker tag back mripta/broker:latest
     - name: Push
       run: |
-        docker push ${{ secrets.DOCKER_USER }}/back:${{ github.sha }}
-        docker push ${{ secrets.DOCKER_USER }}/back:latest
+        docker push mripta/broker:${{ github.sha }}
+        docker push mripta/broker:latest
